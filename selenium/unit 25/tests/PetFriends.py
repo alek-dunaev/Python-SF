@@ -31,9 +31,11 @@ def run_mark(email=valid_email, password=valid_password):
 class TestLocators:
 
     def test_show_my_pets(self):
+        # проверяем, что находимся на главной странице сайта PetFriends
         assert driver.find_element(By.TAG_NAME, 'h1').text == "PetFriends"
 
     def test_my_pets(self):
+        # проверяем, количество наших питомцев 
         driver.find_element(By.CSS_SELECTOR, 'a[href="/my_pets"]').click()
         wait = WebDriverWait(driver, 5)
         wait.until(EC.visibility_of_element_located((By.XPATH, '//div[@id="all_my_pets"]')))
@@ -44,6 +46,7 @@ class TestLocators:
         assert len(cards) == int(a[0])
 
     def test_images_numbers(self):
+        # проверяем, что изображение питомцев не пустые
         driver.find_element(By.CSS_SELECTOR, 'a[href="/my_pets"]').click()
         wait = WebDriverWait(driver, 5)
         wait.until(EC.visibility_of_element_located((By.XPATH, '//div[@class=".col-sm-4 left"]/h2')))
@@ -57,6 +60,7 @@ class TestLocators:
         assert count > (int(amount[1][0]) // 2)
 
     def test_check_animal_data(self):
+         # проверяем, данные питомцев
         driver.find_element(By.CSS_SELECTOR, 'a[href="/my_pets"]').click()
         driver.implicitly_wait(5)
         descriptions = driver.find_elements(By.CSS_SELECTOR, 'div#all_my_pets table tbody tr')
