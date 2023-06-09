@@ -1,1 +1,1 @@
-# QAP_PetFriendsTesting
+API тестирование сайта PetFriends
