@@ -64,7 +64,7 @@ class WebPage(object):
             self._web_driver.execute_script('window.scrollTo(0, -document.body.scrollHeight);')
 
     def switch_to_iframe(self, iframe):
-        """ Switch to iframe by it's name. """
+        """ Switch to iframe by it is name. """
 
         self._web_driver.switch_to.frame(iframe)
 
