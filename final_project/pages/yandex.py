@@ -23,7 +23,7 @@ class MainPage(WebPage):
     search_run_button = WebElement(xpath='//button[@type="submit"]')
 
     # Titles of the products in search results
-    products_titles = ManyWebElements(xpath='//a[contains(@href, "/product-") and @title!=""]')
+    products_titles = ManyWebElements(xpath='//a[contains(@href, "/product-")]')  #and @title!=""]'
 
     # Button to sort products by price
     sort_products_by_price = WebElement(css_selector='button[data-autotest-id="dprice"]')
