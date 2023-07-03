@@ -1,5 +1,8 @@
 Итоговый проект по автоматизации тестирования skillfactory.ru.
 
+Для запуска:
+python -m pytest -v --driver Chrome --driver-path C:/project/chromedriver.exe tests/test_auth_page_rostelekom.py**
+
 TC-RT-001 Регистрацию по электронной почте. Позитивный тест.
 
 TC-RT-002 Регистрация по номеру телефона. Позитивный тест.
