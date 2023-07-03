@@ -1,11 +1,12 @@
 from pages.base import WebPage
 from pages.elements import WebElement
+from settings import LOGIN_URL
 
 
 class AuthPage(WebPage):
 
     def __init__(self, web_driver, url=''):
-        url = 'https://b2c.passport.rt.ru/auth/realms/b2c/protocol/openid-connect/auth?client_id=account_b2c&redirect_uri=https://b2c.passport.rt.ru/account_b2c/login&response_type=code&scope=openid&state=312322e5-94fa-41eb-880e-6e97327a1605&theme&auth_type'
+        url = LOGIN_URL or 'https://b2c.passport.rt.ru/auth/realms/b2c/protocol/openid-connect/auth?client_id=account_b2c&redirect_uri=https://b2c.passport.rt.ru/account_b2c/login&response_type=code&scope=openid&state=312322e5-94fa-41eb-880e-6e97327a1605&theme&auth_type'
         super().__init__(web_driver, url)
 
     phone = WebElement(id='username')
